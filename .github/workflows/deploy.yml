@@ -18,10 +18,16 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout your repository using git
-        uses: actions/checkout@v4
-        with:
-          lfs: true
+      #   - name: Checkout your repository using git
+      #     uses: actions/checkout@v4
+      #     with:
+      #       lfs: true
+      - name: Cached LFS checkout
+        uses: nschloe/action-cached-lfs-checkout@v1.2.2
+
+      - name: Checkout LFS objects
+        run: git lfs checkout
+
       - name: Install, build, and upload your site
         uses: withastro/action@v3
         # with:
