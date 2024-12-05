@@ -1,0 +1,32 @@
+---
+import Image from "astro/components/Image.astro";
+
+import type { CollectionEntry, render } from "astro:content";
+interface Props {
+  post: CollectionEntry<"projects">;
+}
+
+const { post } = Astro.props;
+
+console.log(post.data.cover_image);
+---
+
+<div class="project_card">
+  <h2>{post.data.title}</h2>
+  {post.body}
+  <!-- <Image src={post.data.cover_image} alt="" /> -->
+  <img src={post.data.cover_image?.src} alt="" />
+</div>
+
+<style>
+  .project_card {
+    background-color: gray;
+    padding: 1rem;
+    margin: 1rem;
+  }
+  img {
+    width: 100%;
+    max-width: 60%;
+    margin: 1rem 1rem;
+  }
+</style>
