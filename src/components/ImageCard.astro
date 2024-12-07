@@ -1,0 +1,53 @@
+---
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
+interface Props {
+  imagePath: string;
+  altText: string;
+  projectName: string;
+  linkUrl: string;
+}
+
+const {
+  imagePath,
+  altText,
+  projectName = "Project",
+  linkUrl = "https://www.example.com",
+} = Astro.props;
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/assets/projects/*.{jpeg,jpg,png,gif}"
+);
+const imagesrc = await images[imagePath]();
+
+if (!images[imagePath])
+  throw new Error(
+    `"${imagePath}" does not exist in glob: "src/assets/projects/*.{jpeg,jpg,png,gif}"`
+  );
+---
+
+<div class="card">
+  <a href={linkUrl}>
+    <Image src={images[imagePath]()} alt={altText} />
+  </a>
+</div>
+
+<style>
+  .card {
+    display: flex;
+    flex-direction: column;
+    padding: 0.2rem;
+  }
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0.2rem;
+  }
+  .project_label {
+    position: relative;
+
+    padding-top: 0.5rem;
+    margin: 0;
+  }
+</style>
