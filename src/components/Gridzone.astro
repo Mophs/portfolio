@@ -1,6 +1,111 @@
 ---
 import placeholder1 from "../placeholders/600x400.svg";
 import placeholder2 from "../placeholders/400x400.svg";
-
+import ImageCard from "../components/ImageCard.astro";
 import Image from "astro/components/Image.astro";
 ---
+
+<div class="image_gallery">
+  <div class="image_gallery_column">
+    <div class="image_gallery_card">
+      <!-- <ImageCard
+        imagePath={"src/placeholders/400x400.svg"}
+        altText="placeholder"
+        projectName="project"
+        linkUrl="www.example.com"
+      /> -->
+      <Image src={placeholder1} alt="placeholder image" />
+    </div>
+    <div class="image_gallery_card">
+      <Image src={placeholder1} alt="placeholder image" />
+    </div>
+    <div class="image_gallery_card">
+      <Image src={placeholder1} alt="placeholder image" />
+    </div>
+    <div class="image_gallery_card">
+      <Image src={placeholder1} alt="placeholder image" />
+    </div>
+    <div class="image_gallery_card">
+      <Image src={placeholder1} alt="placeholder image" />
+    </div>
+    <div class="image_gallery_card">
+      <Image src={placeholder1} alt="placeholder image" />
+    </div>
+  </div>
+  <div class="image_gallery_column">
+    <div class="image_gallery_card">
+      <Image src={placeholder2} alt="placeholder image" />
+    </div>
+    <div class="image_gallery_card">
+      <Image src={placeholder2} alt="placeholder image" />
+    </div>
+    <div class="image_gallery_card">
+      <Image src={placeholder1} alt="placeholder image" />
+    </div>
+    <div class="image_gallery_card">
+      <Image src={placeholder1} alt="placeholder image" />
+    </div>
+    <div class="image_gallery_card">
+      <Image src={placeholder1} alt="placeholder image" />
+    </div>
+    <div class="image_gallery_card">
+      <Image src={placeholder1} alt="placeholder image" />
+    </div>
+  </div>
+  <div class="image_gallery_column">
+    <div class="image_gallery_card">
+      <Image src={placeholder1} alt="placeholder image" />
+    </div>
+    <div class="image_gallery_card">
+      <Image src={placeholder1} alt="placeholder image" />
+    </div>
+    <div class="image_gallery_card">
+      <Image src={placeholder1} alt="placeholder image" />
+    </div>
+    <div class="image_gallery_card">
+      <Image src={placeholder1} alt="placeholder image" />
+    </div>
+    <div class="image_gallery_card">
+      <Image src={placeholder1} alt="placeholder image" />
+    </div>
+    <div class="image_gallery_card">
+      <Image src={placeholder1} alt="placeholder image" />
+    </div>
+  </div>
+</div>
+<style>
+  .image_gallery {
+    margin: 0 auto;
+    --grid-gap: 1vmin;
+    display: flex;
+
+    flex-direction: row;
+    align-items: flex-start;
+
+    /* overflow: auto; */
+    gap: var(--grid-gap);
+    /* justify-content: center; */
+    justify-items: center;
+  }
+  @media (max-width: 900px) {
+    .image_gallery {
+      flex-direction: column;
+    }
+  }
+  .image_gallery_column {
+    display: flex;
+    flex-direction: column;
+    gap: var(--grid-gap);
+    max-width: 100%;
+    /* min-width: 30vw; */
+
+    width: 100%;
+  }
+  .image_gallery_card {
+    width: 100%;
+  }
+  img {
+    width: 100%;
+    height: auto;
+  }
+</style>

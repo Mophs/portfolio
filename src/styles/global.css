@@ -27,6 +27,7 @@ canvas,
 svg {
   display: block;
   max-width: 100%;
+  height: auto;
 }
 
 p,
@@ -88,6 +89,8 @@ h2 {
 
   padding-right: 2ch;
   padding-left: 2ch;
+  padding-top: 1ch;
+  padding-bottom: 1ch;
 }
 header {
   margin: min-max(6vh, 1rem) 0 1rem;
