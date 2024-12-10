@@ -1,15 +1,13 @@
 ---
 import Layout from "../layouts/Layout.astro";
+// import Image from "astro/components/Image.astro";
 import Image from "astro/components/Image.astro";
-import { getCollection, getEntry } from "astro:content";
+// import { getCollection, getEntry } from "astro:content";
+// const content = await getCollection("projects");
+import Gridzone from "../components/Gridzone.astro";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
-const content = await getCollection("projects");
-import ProjectCard from "../components/ProjectCard.astro";
 import placeholder1 from "../placeholders/600x400.svg";
 import placeholder2 from "../placeholders/400x400.svg";
-import Gridzone from "../components/Gridzone.astro";
 ---
 
 <Layout>
@@ -22,7 +20,7 @@ import Gridzone from "../components/Gridzone.astro";
 
   <div class="grid_container">
     <div class="grid_item">
-      <Image src={placeholder1} alt="" />
+      <!-- <Image src={placeholder1} alt="" /> -->
       <h3>Grid Item</h3>
       lived out their lives. The aggregate of our joy and suffering, thousands of
       confident religions, ideologies, and economic doctrines, every hunter and forager,
@@ -32,7 +30,7 @@ import Gridzone from "../components/Gridzone.astro";
     </div>
   </div>
   <div class="grid_item">
-    <Image src={placeholder1} alt="" />
+    <!-- <Image src={placeholder1} alt="" /> -->
     <h3>Grid Item</h3>
     lived out their lives. The aggregate of our joy and suffering, thousands of confident
     religions, ideologies, and economic doctrines, every hunter and forager, every
@@ -42,7 +40,7 @@ import Gridzone from "../components/Gridzone.astro";
   </div>
 </Layout>
 <div class="grid_item">
-  <Image src={placeholder1} alt="" />
+  <!-- <Image src={placeholder1} alt="" /> -->
   <h3>Grid Item</h3>
   lived out their lives. The aggregate of our joy and suffering, thousands of confident
   religions, ideologies, and economic doctrines, every hunter and forager, every
@@ -76,11 +74,11 @@ import Gridzone from "../components/Gridzone.astro";
   <h3>A third level header</h3>
 </div>
 
-<Image src={placeholder2} alt="" />
+<!-- <Image src={placeholder2} alt="" /> -->
 <div class="text_zone">
   <h4>A fourth level header</h4>
 </div>
-<Image src={placeholder2} alt="" />
+<!-- <Image src={placeholder2} alt="" /> -->
 
 <div class="text_zone">
   <p>

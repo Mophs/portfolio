@@ -1,8 +1,8 @@
 ---
+import Image from "astro/components/Image.astro";
+
 import placeholder1 from "../placeholders/600x400.svg";
 import placeholder2 from "../placeholders/400x400.svg";
-import ImageCard from "../components/ImageCard.astro";
-import Image from "astro/components/Image.astro";
 ---
 
 <div class="image_gallery">
@@ -81,11 +81,10 @@ import Image from "astro/components/Image.astro";
 
     flex-direction: row;
     align-items: flex-start;
-
+    align-content: flex-start;
     /* overflow: auto; */
     gap: var(--grid-gap);
-    /* justify-content: center; */
-    justify-items: center;
+    justify-content: center;
   }
   @media (max-width: 900px) {
     .image_gallery {
